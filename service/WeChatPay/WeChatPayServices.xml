@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+    <service verb="get" noun="OpenId">
+        <description>从微信获取OpenId</description>
+        <in-parameters>
+            <parameter name="code" required="true"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="respMap"/>
+        </out-parameters>
+        <actions>
+			<script location="component://WeChat-Pay/service/WeChatPay/script/GetOpenId.groovy" />
+        </actions>
+    </service>
+</services>
