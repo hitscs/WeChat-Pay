@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- General Guideline Verbs: GET=find, POST=create/do, PUT=store (create or update), PATCH=update, DELETE=delete  -->
+<!-- General Guideline Verbs: GET=find, POST=create/do, PUT=store (create or update), PATCH=update, DELETE=delete -->
 
-<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
-        name="ecommerce" displayName="微信小程序支付 REST API" version="1.0.0" description="微信小程序支付 REST API">
-
-
-
-<!--     <resource name="products" require-authentication="anonymous-view" description="产品信息">
-        <id name="productId"><method type="get"><service name="ecommerce.ProductServices.get#ProductInfo"/></method></id>
-        <resource name="search"><method type="get"><service name="ecommerce.ProductServices.search#Products"/></method></resource>
-        <resource name="reviews">
-            <method type="get"><service name="ecommerce.ProductServices.get#ProductReviews"/></method>
-            <method type="post"><service name="ecommerce.ProductServices.create#ProductReview"/></method>
-        </resource>
-    </resource>
-    <resource name="categories" require-authentication="anonymous-view" description="产品类别">
-        <id name="productCategoryId">
-            <resource name="info"><method type="get">
-                <service name="ecommerce.ProductServices.get#CategoryInfo"/></method></resource>
-            <resource name="products"><method type="get">
-                <service name="ecommerce.ProductServices.get#CategoryProducts"/></method></resource>
-        </id>
-    </resource> -->
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd" name="wechat" displayName="微信小程序支付 REST API"
+	version="1.0.0" description="微信小程序支付 REST API">
+	<resource name="openId" require-authentication="anonymous-view" description="获取openId">
+		<method type="get">
+			<service name="WeChatPay.WeChatPayServices.get#OpenId" />
+		</method>
+	</resource>
+<!-- 	<resource name="reviews">
+		<method type="get">
+			<service name="ecommerce.ProductServices.get#ProductReviews" />
+		</method>
+		<method type="post">
+			<service name="ecommerce.ProductServices.create#ProductReview" />
+		</method>
+	</resource> -->
 </resource>
